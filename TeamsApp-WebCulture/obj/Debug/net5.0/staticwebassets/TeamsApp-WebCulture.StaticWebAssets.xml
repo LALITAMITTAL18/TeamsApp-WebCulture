@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\mittall\source\repos\TeamsApp-WebCulture\TeamsApp-WebCulture\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/Microsoft.TeamsFx" Path="C:\Users\mittall\.nuget\packages\microsoft.teamsfx\0.1.0-rc\build\..\staticwebassets\" />
+</StaticWebAssets>

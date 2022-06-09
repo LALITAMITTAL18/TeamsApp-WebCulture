@@ -1,0 +1,180 @@
+﻿@using TeamsApp_WebCulture
+@using Microsoft.Extensions.Localization
+@using System.Threading;
+@using System.Globalization;
+@inject NavigationManager NavigationManager;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject IStringLocalizer<Search> Localizer
+
+<div class="container">
+    <div class="header">
+        <div class="searchBoxContainer">
+            <div class="searchBox">
+                <input type="text" @onchange="HandleEnter" placeholder="@Localizer["tab_configure_search_title"]" />
+
+                <img alt="search" class="searchBoxIcon" src="/images/IconSearch.svg" />
+            </div>
+            <div class="filterContainer">
+                <button class="filterContainerButton" @onclick="ToggleFilter" @onfocusout="HideFilter">
+                    @Localizer["tab_configure_filter_title"]
+                </button>
+                <img alt="filter" class="filterContainerIcon" @onclick="ToggleFilter" @onfocusout="HideFilter" src="/images/IconFilter.svg" />
+            </div>
+        </div>
+        <div class="filterOptionsContainer">
+            @if (_toggleFilter)
+            {
+                <div id="filterOptions" class="filter-options">
+                    <div class="filter-wrapper">
+                        @if (_uniqueDivisions?.Length > 0)
+                        {
+                            <div className="filterHeaders">@Localizer["tab_configure_filter_item1"]</div>
+                            @foreach (var div in _uniqueDivisions)
+                            {
+                                <div class="filterItems"><tr><td><input class="filterCheckbox" type="checkbox" id=@div.DivisionDescription value=@div.DivisionDescription @onchange="(eventArgs)=>ApplyFilterDivision(div,eventArgs.Value)" /></td><td>@div.DivisionDescription</td></tr></div>
+                            }
+                        }
+
+                        @if (_uniqueEntityType?.Length > 0)
+                        {
+                            <div className="filterHeaders">@Localizer["tab_configure_filter_item2"]</div>
+                            @foreach (var eType in _uniqueEntityType)
+                            {
+                                <div class="filterItems"><tr><td><input class="filterCheckbox" type="checkbox" id=@eType.EntityType value=@eType.EntityType.ToString() @onchange="(eventArgs)=>ApplyFilterEntityType(eType,eventArgs.Value)" /></td><td>@eType.EntityType</td></tr></div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="results">
+        @if (_results?.Length > 0)
+        {
+            @foreach (var item in _results)
+            {
+                <div class="@(item.ID == _selectedItem?.ID ? "result-selected" : "result-wrapper" )" @onclick="() => SetSelectedResult(item)">
+                    <div class="result-a">
+                        <img alt="entity" src="/images/placeholder_@(item.EntityType).png" />
+                    </div>
+                    <div class="result-right">
+                        <div class="result-b">@(item.Description)</div>
+                        <div class="result-c"><span class="resultTag">@Localizer["tab_configure_searchresults_line1_title"]: </span> @(item.DivisionDescription)<br /><span class="resultTag">@Localizer["tab_configure_searchresults_line2_title"]: </span> @(item.EntityType)</div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@code {
+
+    private string searchTerm;
+    private SearchModel[] _results { get; set; }
+    private SearchModel[] _intialResults { get; set; }
+    private SearchModel[] _uniqueDivisions { get; set; }
+    private SearchModel[] _uniqueEntityType { get; set; }
+
+    [Parameter]
+    public EventCallback<SearchModel> OnSelectItem { get; set; }
+
+    private SearchModel _selectedItem { get; set; }
+
+    private bool _toggleFilter { get; set; }
+
+
+    private void HandleEnter(ChangeEventArgs e)
+    {
+
+        if (e.Value.ToString() != searchTerm)
+        {
+            searchTerm = e.Value.ToString();
+            FetchData();
+        }
+    }
+
+
+
+
+    private void FetchData()
+    {
+
+        if (searchTerm != null)
+        {
+            _intialResults = new SearchModel[]{  new SearchModel
+                                                    {
+                                                        ID= "1",
+                                                        Description="test1",
+                                                        EntityType="Account",
+                                                        DivisionDescription="test1"
+
+                                                    },
+                                                    new SearchModel
+                                                    {
+                                                        ID= "2",
+                                                        Description="test2",
+                                                        EntityType="Account",
+                                                         DivisionDescription="test1"
+
+                                                    },
+                                                    new SearchModel
+                                                    {
+                                                        ID= "3",
+                                                        Description="test3",
+                                                        EntityType="Account",
+                                                         DivisionDescription="test1"
+
+                                                    },
+                                                    new SearchModel
+                                                    {
+                                                        ID= "4",
+                                                        Description="test4",
+                                                        EntityType="Account",
+                                                         DivisionDescription="test2"
+
+                                                     }
+
+                };
+
+            _results = _intialResults;
+            _uniqueDivisions = _results.GroupBy(g => g.DivisionDescription).Select(s => s.FirstOrDefault()).ToList().ToArray();
+            _uniqueEntityType = _results.GroupBy(g => g.EntityType).Select(s => s.FirstOrDefault()).ToList().ToArray();
+
+            StateHasChanged();
+        }
+
+    }
+
+    private async void SetSelectedResult(SearchModel selectedItem)
+    {
+        _selectedItem = selectedItem;
+        await OnSelectItem.InvokeAsync(_selectedItem);
+    }
+
+    private void ToggleFilter()
+    {
+        _toggleFilter = !_toggleFilter;
+
+    }
+
+    private void HideFilter()
+    {
+        _toggleFilter = false;
+
+    }
+
+    private void ApplyFilterDivision(SearchModel filterItem, object checkedValue)
+    {
+
+    }
+
+    private void ApplyFilterEntityType(SearchModel filterItem, object checkedValue)
+    {
+
+    }
+
+    private void FilterResults()
+    {
+
+    }
+}

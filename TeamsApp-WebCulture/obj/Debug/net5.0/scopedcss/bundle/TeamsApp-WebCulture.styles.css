@@ -1,0 +1,385 @@
+/* _content/TeamsApp-WebCulture/Components/ProfileCard.razor.rz.scp.css */
+.profile[b-72hkyn4zli] {
+    display: flex;
+    align-items: center;
+}
+
+    .profile .avatar[b-72hkyn4zli] {        
+        flex: 1 0 auto;
+    }
+
+    .profile .avatar img[b-72hkyn4zli] {
+        margin: 15px;
+        height: 64px;
+        width: 64px;
+        border-radius: 32px;
+    }
+
+    .profile .info[b-72hkyn4zli] {
+        margin: 0 2em;
+        flex: 4 0 auto;
+    }
+
+        .profile .info > h3[b-72hkyn4zli] {
+            margin: 0;
+        }
+
+        .profile .info > p[b-72hkyn4zli] {
+            margin: 0;
+        }
+/* _content/TeamsApp-WebCulture/Components/Search.razor.rz.scp.css */
+.center[b-1qzpnnxoi9] {
+    text-align: center;
+    color: #424242;
+}
+
+.container[b-1qzpnnxoi9] {
+    height: 100%;
+    background: white;
+    width: 100%;
+    overflow: hidden;
+}
+
+.filter-options[b-1qzpnnxoi9] {
+    position: relative;
+    min-width: 150px;
+    width: 30%;
+    float: right;
+    margin: auto;
+    vertical-align: middle;
+    z-index: 2;
+    background: white;
+    color: #424242;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0.5px solid #f0f0f0;
+    margin-left: 2vh
+}
+
+.filter-wrapper[b-1qzpnnxoi9] {
+    list-style-type: none;
+    z-index: 2;
+    padding: 0 0 10px 6px;
+}
+
+.searchBoxContainer[b-1qzpnnxoi9] {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    border-width: 0 0 2px;
+    border-color: transparent;
+    border-radius: 5px;
+    padding: 10px 0 0 2vh;
+    float: left;
+}
+
+    .searchBoxContainer:focus[b-1qzpnnxoi9] {
+        border-bottom: 2px solid rgb(100, 103, 165);
+    }
+
+.searchBox[b-1qzpnnxoi9] {
+    width: 65%;
+    background: #f3f2f1;
+    float: left;
+    border-radius: 4px;
+}
+
+    .searchBox > input[b-1qzpnnxoi9] {
+        width: 90%;
+        height: 34px;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 0 0 0 2vh
+    }
+
+.searchBoxIcon[b-1qzpnnxoi9] {
+    position: relative;
+    float: right;
+    display: inline;
+    width: 10%;
+    max-height: 30px;
+    padding-top: 6px;
+}
+
+.filterContainer[b-1qzpnnxoi9] {
+    position: relative;
+    width: 30%;
+    height: 35px;
+    background: #f3f2f1;
+    color: #424242;
+    border-width: 0 0 2px;
+    border-radius: 4px;
+    border-color: transparent;
+    margin-left: 2vh;
+    float: right;
+    display: inline;
+}
+
+.filterOptionsContainer[b-1qzpnnxoi9] {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    border-width: 0 0 2px;
+    border-color: transparent;
+    border-radius: 5px;
+    padding: 10px 0 0 2vh;
+    float: left;
+}
+
+.filterContainerButton[b-1qzpnnxoi9] {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    text-align: left;
+    color: rgb(117, 117, 117);
+    padding: 0 0 0 15px;
+}
+
+.filterContainerIcon[b-1qzpnnxoi9] {
+    position: relative;
+    float: right;
+    display: inline;
+    width: 20%;
+    max-height: 30px;
+    padding-top: 6px;
+}
+
+.filterHeaders[b-1qzpnnxoi9] {
+    font-weight: bold;
+    padding: 5px 0px 5px 0px;
+}
+
+.filterItems[b-1qzpnnxoi9] {
+    padding: 1px 0 1px 2px;
+    font-size: smaller;
+}
+
+    .filterItems td[b-1qzpnnxoi9] {
+        padding-right: 4px;
+    }
+
+.filterCheckbox[b-1qzpnnxoi9] {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.results[b-1qzpnnxoi9] {
+    position: relative;
+    height: 90vh;
+    color: #424242;
+    overflow-wrap: break-word;
+    overflow: scroll;
+    width: 100%;
+    padding: 10px 0 0 2vh;
+}
+
+.result-wrapper[b-1qzpnnxoi9] {
+    display: flex;
+    padding-top: 1vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 70px;
+    list-style-type: none;
+    border: 1px solid #f3f2f1;
+}
+
+    .result-wrapper img[b-1qzpnnxoi9] {
+        height: 90%;
+    }
+
+.result-selected[b-1qzpnnxoi9] {
+    display: flex;
+    padding-top: 1vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 70px;
+    list-style-type: none;
+    background-color: #f3f2f1;
+}
+
+.result-wrapper:hover[b-1qzpnnxoi9] {
+    background-color: #f3f2f1;
+}
+
+.result-a[b-1qzpnnxoi9] {
+    padding-left: 10px;
+    margin-right: 30px;
+    flex: 0 0 100%;
+    width: 8%;
+    height: 100%;
+    float: left;
+}
+
+    .result-a img[b-1qzpnnxoi9] {
+        height: 80%;
+    }
+
+.result-right[b-1qzpnnxoi9] {
+    float: right;
+    width: 90%;
+}
+
+.result-b[b-1qzpnnxoi9] {
+    font-weight: bold;
+    font-size: small;
+    height: 28%;
+    width: 80%;
+    padding-bottom: 12px;
+    order: 1;
+    display: inline;
+    overflow: hidden;
+}
+
+.result-c[b-1qzpnnxoi9] {
+    font-size: smaller;
+    height: 70%;
+    order: 2;
+}
+
+.resultTag[b-1qzpnnxoi9] {
+    font-weight: 600;
+}
+
+button[b-1qzpnnxoi9], button:focus[b-1qzpnnxoi9] {
+    outline: none;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+    button:active[b-1qzpnnxoi9] {
+        outline: none;
+        background: transparent;
+        border: 1px solid white;
+    }
+/* _content/TeamsApp-WebCulture/Components/Welcome.razor.rz.scp.css */
+.narrow[b-tz4yzpghom] {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-padding[b-tz4yzpghom] {
+    padding: 4rem;
+}
+
+.welcome.page > .narrow > img[b-tz4yzpghom] {
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+}
+
+.welcome.page > .narrow > .menu[b-tz4yzpghom] {
+    width: 80%;
+    justify-content: space-between;
+    margin: 4rem auto;
+    border-bottom: none;
+}
+
+    .welcome.page > .narrow > .menu > .menu-item[b-tz4yzpghom] {
+        background-color: inherit;
+        margin: auto;
+        font-size: 14px;
+        min-height: 32px;
+        border-bottom-color: rgb(98, 100, 167);
+    }
+
+.center[b-tz4yzpghom] {
+    text-align: center;
+}
+
+.sections > *[b-tz4yzpghom] {
+    margin: 4rem auto;
+}
+
+.error[b-tz4yzpghom] {
+    color: red;
+}
+/* _content/TeamsApp-WebCulture/Pages/Tab.razor.rz.scp.css */
+.narrow[b-f7m58bjfpq] {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.page-padding[b-f7m58bjfpq] {
+	padding: 4rem;
+}
+
+.welcome.page > .narrow > img[b-f7m58bjfpq] {
+	margin: 0 auto;
+	display: block;
+	width: 200px;
+}
+
+.welcome.page > .narrow > ul[b-f7m58bjfpq] {
+	width: 75%;
+	justify-content: space-between;
+	margin: 4rem auto;
+}
+
+	.welcome.page > .narrow > ul > li[b-f7m58bjfpq] {
+		background-color: inherit;
+		margin: auto;
+	}
+
+		.welcome.page > .narrow > ul > li > a[b-f7m58bjfpq] {
+			font-size: 16px;
+			height: 32px;
+			border-bottom-color: rgb(98, 100, 167);
+		}
+
+.center[b-f7m58bjfpq] {
+	text-align: center;
+}
+
+pre[b-f7m58bjfpq] {
+	overflow-x: scroll;
+}
+
+pre[b-f7m58bjfpq],
+div.error[b-f7m58bjfpq] {
+	background-color: #e5e5e5;
+	padding: 1rem;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	margin: 1rem 0;
+}
+
+code[b-f7m58bjfpq] {
+	background-color: #e5e5e5;
+	display: inline-block;
+	padding: 0px 6px;
+	border-radius: 3px;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.error[b-f7m58bjfpq] {
+	color: red;
+}
+
+.profile[b-f7m58bjfpq] {
+	display: flex;
+	margin: 1em 0;
+	background-color: white;
+	width: fit-content;
+	box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+}
+
+	.profile > .avatar[b-f7m58bjfpq] {
+		margin: 2em 1em;
+		height: 72px;
+		width: 72px;
+	}
+
+	.profile > .info[b-f7m58bjfpq] {
+		margin: 2em 2em 0 0;
+	}
+
+		.profile > .info > h3[b-f7m58bjfpq] {
+			margin: 0;
+		}
+
+		.profile > .info > p[b-f7m58bjfpq] {
+			margin: 0;
+		}
+/* _content/TeamsApp-WebCulture/Shared/MainLayout.razor.rz.scp.css */

@@ -1,0 +1,28 @@
+.profile[b-72hkyn4zli] {
+    display: flex;
+    align-items: center;
+}
+
+    .profile .avatar[b-72hkyn4zli] {        
+        flex: 1 0 auto;
+    }
+
+    .profile .avatar img[b-72hkyn4zli] {
+        margin: 15px;
+        height: 64px;
+        width: 64px;
+        border-radius: 32px;
+    }
+
+    .profile .info[b-72hkyn4zli] {
+        margin: 0 2em;
+        flex: 4 0 auto;
+    }
+
+        .profile .info > h3[b-72hkyn4zli] {
+            margin: 0;
+        }
+
+        .profile .info > p[b-72hkyn4zli] {
+            margin: 0;
+        }
